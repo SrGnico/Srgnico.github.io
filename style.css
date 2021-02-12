@@ -144,6 +144,75 @@
     transition: 0.5s ease;
 }
 
+.combos{
+    position:absolute;
+    bottom: 0;
+    left: 5px;
+    background: yellow;
+    height: 50px;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    transition: 0.5s ease;
+}
+
 #slider-1:checked{
     height: 762px;
 }
+
+#slider-1:checked ~ .combos{
+    transform: translateY(-641px);
+}
+
+/*fin 2do slider*/
+
+/*inicio 2do slider*/
+.slider-3{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+#foto-horizontal-2{
+    width: 100%; 
+}
+.slider-inside-2{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    bottom: 0;
+}
+
+#slider-2{
+    outline: none;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    background: black;
+    position: absolute;
+    top: 0;
+    transition: 0.5s ease;
+}
+
+.precios{
+    position:absolute;
+    top: 0;
+    right: 5px;
+    background: yellow;
+    height: 50px;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    transition: 0.5s ease;
+}
+
+#slider-2:checked{
+    height: 762px;
+}
+
+#slider-2:checked ~ .precios{
+    transform: translateY(641px);
+}
+
+/*fin 2do slider*/
