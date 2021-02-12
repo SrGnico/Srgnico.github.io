@@ -124,25 +124,26 @@
 
 #foto-horizontal-1{
     width: 100%; 
-    z-index: 3;
 }
 .slider-inside-1{
-    position: relative;
-}
-#slider-1{
-    outline: none;
-    -webkit-appearance: none;
-    position: absolute;
     width: 100%;
-    height: 50px;
-    background-color: black;
-    transition: 0.5s;
-    cursor: pointer;
-    z-index: 5;
+    height:100%;
+    position: absolute;
     bottom: 0;
 }
 
-/*funcion slide*/
+#slider-1{
+    outline: none;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    background: black;
+    position: absolute;
+    bottom: 0;
+    transition: 0.5s ease;
+}
+
 #slider-1:checked{
-    height: 110vh;
+    height: 762px;
 }
