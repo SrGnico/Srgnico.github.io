@@ -2,8 +2,9 @@
     margin:0;
     padding:0;
     font-family: 'Big Shoulders Display', cursive;
+    transition: 0.5s;
+    letter-spacing:2px;
 }
-
 ::-webkit-scrollbar {
     display: none;
 }
@@ -46,67 +47,92 @@
     width: 100%;
     height: 800px;
     background-color: black;
-    transition: 0.5s;
     cursor: pointer;
-    z-index: 5;
-
+    z-index: 10;
+    opacity: 0;
 }
 #logo{
     width: 200px;
     height: 150px;
-    z-index: 10;
+    z-index: 5;
     position: absolute;
     left: 50%;
     top: 5%;
     transform: translateX(-50%);
-    transition: 0.5s;
 }
 
-.barra-1{
-    width: 80%;
-    height: 20px;
-    background-color: yellow;
-    z-index: 7;
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: 0.5s ease;
-}
-
-.h1-1{
-    text-align: center;
-    color: white;
-    margin-top: 50px;
-
+.container-barra{
+    width: 100%;
+    height: 100%;
+    background-color: black;
 }
 
 .numero{
-    text-align: center;
+    font-size: 50px;
     color: white;
-    margin-top: 50px;
-    position: relative;
+    position: absolute;
+    top: 650px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: auto;
+    -webkit-appearance: none;
+    text-decoration: none;
+    z-index: 15;
 }
 .numero::after{
     content:"";
     top: -25%;
-    left: 25%;
-    right: 25%;
+    left: -25%;
+    right: -25%;
     bottom: -25%;
     border: 1px solid #ffffff;
     position: absolute;
 }
+.contenido-barra-1{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: white;
+}
+.h1-1{
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    color: white;
+}
+
+#h1-1{
+    top: 50%;
+}
+#h1-2{
+    top: 35%;
+}
+#h1-3{
+    top: 70%;
+}
+
 
 /*funcion de mover en :checked*/
-
-#slider:checked ~ .barra-1{
-    opacity: 0;
-    transform: translateX(70%);
-    z-index: 3;
-} 
 #slider:checked ~ #logo{
-    opacity: 0;
     transform: translateX(200%);
+    opacity: 0;
+}
+#slider:checked ~ .contenido-barra-1{
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+#slider:checked ~ .numero{
+    transform: translateX(325%);
+    opacity: 0;
+    z-index: 3;
+}
+#slider:checked ~ .container-barra{
+    transform: translateX(100%);
     z-index: 3;
 }
 
@@ -124,6 +150,7 @@
 
 #foto-horizontal-1{
     width: 100%; 
+    z-index: 1;
 }
 .slider-inside-1{
     width: 100%;
@@ -138,30 +165,246 @@
     width: 100%;
     height: 50px;
     cursor: pointer;
-    background: black;
     position: absolute;
     bottom: 0;
     transition: 0.5s ease;
+    z-index: 10;
+    opacity: 0;
+}
+.container-barra-2{
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    background: black;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: white;
+    opacity: .3;
 }
 
 .combos{
     position:absolute;
-    bottom: 0;
-    left: 5px;
+    left: 15px;
     background: yellow;
-    height: 50px;
     text-align: center;
     padding: 5px;
-    margin: 5px;
     transition: 0.5s ease;
+    width: 250px;
+    height: 40px;
+    top: 0; 
+    z-index: 7;
 }
 
-#slider-1:checked{
-    height: 762px;
+.menu-oculta-1{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+}
+/*combos mila, mix y hambur*/
+.columna-1{
+    margin-left: .5%;
+    width: 33%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+}
+/*combo mix*/
+.titulo-combo-1{
+    text-align: center;
+    background: yellow;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 20%;
+}
+#combo-1{
+    width: 90%;
+    height: 25%;
+    margin-left: 5%;
+    margin-top: 5%;
+    background: black;
+    border: 3px solid white;
+    color: white;
+    position: relative;
+}
+.contenido-1{
+    margin: 2%;
+}
+/*combo burguer*/
+
+.titulo-combo-1-2{
+    text-align: center;
+    background: yellow;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 10%;
 }
 
-#slider-1:checked ~ .combos{
-    transform: translateY(-641px);
+#combo-2{
+    width: 90%;
+    height: 8%;
+    margin-left: 5%;
+    margin-top: 5%;
+    background: black;
+    border: 3px solid white;
+    color: white;
+    position: relative;
+}
+
+.precio-2{
+    text-align: center;
+    position: absolute;
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+    border: 3px solid rgb(0, 0, 0);
+    left: 50%;
+    top: 70%;
+    transform: translateX(-50%);
+    width: 50%;
+    font-size: 30;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 15;
+    overflow: hidden;
+}
+
+.precio-2::after{
+    content:"Comprar";
+    opacity: 0;
+    transition: .3s ease;
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    background:rgb(255, 255, 255)
+}
+.precio-2:hover::after {
+    opacity: 1;
+}
+
+/*combo mila*/
+
+#combo-mila{
+    width: 90%;
+    height: 15%;
+    margin-left: 5%;
+    margin-top: 5%;
+    background: black;
+    border: 3px solid white;
+    color: white;
+    position: relative;
+}
+
+.precio-mila{
+    text-align: center;
+    position: absolute;
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+    border: 3px solid rgb(0, 0, 0);
+    left: 50%;
+    top: 80%;
+    transform: translateX(-50%);
+    width: 50%;
+    font-size: 30;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 15;
+    overflow: hidden;
+}
+
+.precio-mila::after{
+    content:"Comprar";
+    opacity: 0;
+    transition: .3s ease;
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    background:rgb(255, 255, 255)
+}
+.precio-mila:hover::after {
+    opacity: 1;
+}
+
+/*combo para 2*/
+.columna-2{
+    width: 33%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+}
+
+.titulo-combo-2{
+    text-align: center;
+    background: yellow;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 30%;
+}
+#combo-3{
+    width: 90%;
+    height: 25%;
+    margin-left: 5%;
+    margin-top: 15%;
+    background: black;
+    border: 3px solid white;
+    color: white;
+    position: relative;
+}
+
+.titulo-3{
+    margin-top: 1%;
+    text-align: center;
+    text-decoration: underline;
+}
+.contenido-3, .contenido-4{
+    margin: 3%;
+}
+.precio-3{
+    text-align: center;
+    position: absolute;
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+    border: 3px solid rgb(0, 0, 0);
+    left: 50%;
+    top: 90%;
+    transform: translateX(-50%);
+    width: 50%;
+    font-size: 30;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 15;
+    overflow: hidden;
+}
+
+.precio-3::after{
+    content:"Comprar";
+    opacity: 0;
+    transition: .3s ease;
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    background:rgb(255, 255, 255)
+}
+
+/*lista de precios*/
+.columna-3{
+    width: 33%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+}
+
+
+/*checked 2do slider*/
+.precio-3:hover::after {
+    opacity: 1;
 }
 
 /*fin 2do slider*/
@@ -208,7 +451,7 @@
 }
 
 #slider-2:checked{
-    height: 762px;
+    height: 100%;
 }
 
 #slider-2:checked ~ .precios{
@@ -218,18 +461,18 @@
 /*fin 3do slider*/
 /*inicio envios*/
 .envios{
-    height: 1000px;
+    height: 800px;
     width: 100%;
     position: relative;
     display:flex;
 }
 
 #foto-envio{
-    width: 50%;
+    width: 60%;
 }
 .envios-div{
-    height: 1000px;
-    width: 50%;
+    height: 800px;
+    width: 40%;
     right: 0px;
     background: black;
 }
